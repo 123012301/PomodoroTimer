@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal-Pomodoro-Timer</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <h1>Pomodoro Timer By Ali Rayyan</h1>
+    <audio id="pomodoroSound" src="sounds/start.mp3"></audio>
+    <audio id="breakSound" src="sounds/stop.mp3"></audio>
+    <div class="ring">
+        <div class="center">
+            <span id="timerDisplay">00:00</span>
+        </div>
+    </div>
+    <div class="sessAbreak">
+        <div id="sessionCount">
+            Sessions: 0
+        </div>
+        <div id="breakCount">
+            Break: 0
+        </div>
+    </div>
+    <div class="workTimer">Pomodoro:</div>
+    <div class="minAsec">
+        <label>Minutes: <input type="number" id="WorkminutesInput" min="0"></label>
+        <label class="seconds">Seconds: <input type="number" id="WorksecondsInput" min="0" max="59"></label>
+    </div>
+    <div class="breakTimer">Break:</div>
+    <div class="minAsec">
+        <label>Minutes: <input type="number" id="BreakminutesInput" min="0"></label>
+        <label class="seconds">Seconds: <input type="number" id="BreaksecondsInput" min="0" max="59"></label>
+    </div>
+
+    <div class="buttons">
+        <button class="actionButtons" onclick="startTimer()">Start
+        </button>
+        <button class="actionButtons" onclick="pauseTimer()">Pause</button>
+        <button class="actionButtons" onclick="resumeTimer()">Play</button>
+        <button class="actionButtons" onclick="resetTimer()">Reset</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

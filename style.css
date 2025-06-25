@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#timerDisplay {
+    font-size: 48px;
+
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    padding: 15px;
+}
+
+body {
+    background-color: #121212;
+}
+
+.minAsec {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+.workTimer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-bottom: 10px;
+}
+.breakTimer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+input[type="number"] {
+    background-color: #1e1e1e;
+    border: 2px solid #ff7b00;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]::placeholder {
+    color: #bbb;
+}
+
+input[type="number"]:focus {
+    border-color: #ffaa33;
+}
+/* Remove arrows from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+}
+
+
+.seconds {
+    margin-left: 20px;
+}
+
+
+#timerDisplay {
+    color: aliceblue;
+}
+
+.ring {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background: conic-gradient(#333 0deg, orange 0deg);
+}
+
+.center {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 190px;
+    width: 190px;
+    background-color: #121212;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+#sessionCount{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 40px;
+}
+#breakCount{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 40px;
+}
+.sessAbreak{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.actionButtons {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(145deg, #1a0e06, #2c1507); /* warm darks */
+    border: 2px solid rgba(255, 165, 0, 0.2); /* soft orange border */
+    border-radius: 100px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.15); /* orange glow */
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.actionButtons::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #ff7b00, #ffae42, #ff7b00); /* warm orange gradient */
+    animation: rotate 4s linear infinite;
+    z-index: -2;
+}
+
+.actionButtons::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #121212; /* match main theme */
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.actionButtons:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.3); /* stronger glow on hover */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
