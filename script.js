@@ -7,8 +7,8 @@ let totalBreakSeconds;
 let originalBreakTime;
 let isBreak = false;
 
-let progress = 1
-let angle = 360 * (1 - progress);
+let angle = 360;
+//to make the ring look black when the site loads
 document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
 
 
