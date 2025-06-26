@@ -81,7 +81,7 @@ function startTimer() {
         alert("Please enter a valid Pomodoro duration.");
         return;
     }
-
+    
     timer = setInterval(() => {
         if (totalSeconds <= 0) {
             clearInterval(timer)
@@ -179,4 +179,11 @@ function resetTimer() {
     document.getElementById("WorksecondsInput").value = "";
 
 }
-
+function presetTimer(workMin, workSec, breakMin, breakSec){
+    clearInterval(timer)
+    document.getElementById("WorkminutesInput").value = workMin;
+    document.getElementById("WorksecondsInput").value = workSec;
+    document.getElementById("BreakminutesInput").value = breakMin;
+    document.getElementById("BreaksecondsInput").value = breakSec;
+    
+}
