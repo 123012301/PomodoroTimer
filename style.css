@@ -83,8 +83,8 @@ input[type="number"] {
 }
 
 .ring {
-    height: 20vw;
-    width: 20vw;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     position: relative;
     margin: auto;
@@ -98,8 +98,8 @@ input[type="number"] {
     position: absolute;
     top: 5px;
     left: 5px;
-    height: 19.3vw;
-    width: 19.3vw;
+    height: 240px;
+    width: 240px;
     background-color: #121212;
     border-radius: 50%;
     display: flex;
@@ -222,3 +222,4 @@ input[type="number"] {
   box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
 }
+
