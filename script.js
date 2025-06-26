@@ -119,6 +119,21 @@ function pauseTimer() {
 }
 function resumeTimer() {
     clearInterval(timer)
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    if (totalSeconds===0 & isBreak === false){
+        alert("Please enter values");
+        return;
+    }
+     if (totalBreakSeconds===0 & isBreak === true){
+        alert("Break values invalid");
+        return;
+    }
+
+
     if (isBreak === false) {
         timer = setInterval(() => {
             if (totalSeconds <= 0) {
@@ -172,6 +187,10 @@ function resumeTimer() {
 
 function resetTimer() {
     clearInterval(timer)
+    
+    totalBreakSeconds = 0;
+    totalSeconds = 0;
+
     document.getElementById("timerDisplay").textContent = `00:00`
     let angle = 360;
     document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
@@ -180,6 +199,8 @@ function resetTimer() {
 
     document.getElementById("WorkminutesInput").value = "";
     document.getElementById("WorksecondsInput").value = "";
+
+
 
 }
 function presetTimer(workMin, workSec, breakMin, breakSec) {
