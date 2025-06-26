@@ -5,7 +5,7 @@ let sessionCount = 0;
 let breakCount = 0;
 let totalBreakSeconds;
 let originalBreakTime;
-let isBreak = false;   
+let isBreak = false;
 
 function startBreakTimer() {
     clearInterval(timer)
@@ -116,52 +116,54 @@ function pauseTimer() {
 }
 function resumeTimer() {
     clearInterval(timer)
-    if (isBreak === false){
-    timer = setInterval(() => {
-        if (totalSeconds <= 0) {
-            clearInterval(timer)
-            sessionCount++;
-            document.getElementById("timerDisplay").textContent = "break starting"
-            document.getElementById("sessionCount").textContent = `Sessions: ${sessionCount}`
-            startBreakTimer()
-            
-        }
-        minutes = Math.floor(totalSeconds / 60)
-        seconds = totalSeconds % 60
-        let paddedminutes = String(minutes).padStart(2, '0');
-        let paddedseconds = String(seconds).padStart(2, '0');
-        document.getElementById("timerDisplay").textContent = `${paddedminutes}:${paddedseconds}`
-        totalSeconds = totalSeconds - 1
-        let progress = totalSeconds / originalTime;
-        let angle = 360 * (1 - progress);
-        document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
+    if (isBreak === false) {
+        timer = setInterval(() => {
+            if (totalSeconds <= 0) {
+                clearInterval(timer)
+                sessionCount++;
+                document.getElementById("timerDisplay").textContent = "break starting"
+                document.getElementById("sessionCount").textContent = `Sessions: ${sessionCount}`
+                startBreakTimer()
+
+            }
+            minutes = Math.floor(totalSeconds / 60)
+            seconds = totalSeconds % 60
+            let paddedminutes = String(minutes).padStart(2, '0');
+            let paddedseconds = String(seconds).padStart(2, '0');
+            document.getElementById("timerDisplay").textContent = `${paddedminutes}:${paddedseconds}`
+            totalSeconds = totalSeconds - 1
+            let progress = totalSeconds / originalTime;
+            let angle = 360 * (1 - progress);
+            document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
 
 
 
-    }, 1000)}
-    if(isBreak === true){
-         timer = setInterval(() => {
+        }, 1000)
+    }
+    if (isBreak === true) {
+        timer = setInterval(() => {
 
-        let mins = Math.floor(totalBreakSeconds / 60);
-        let secs = totalBreakSeconds % 60;
-        let paddedMins = String(mins).padStart(2, '0');
-        let paddedSecs = String(secs).padStart(2, '0');
-        document.getElementById("timerDisplay").textContent = `${paddedMins}:${paddedSecs}`;
+            let mins = Math.floor(totalBreakSeconds / 60);
+            let secs = totalBreakSeconds % 60;
+            let paddedMins = String(mins).padStart(2, '0');
+            let paddedSecs = String(secs).padStart(2, '0');
+            document.getElementById("timerDisplay").textContent = `${paddedMins}:${paddedSecs}`;
 
-        totalBreakSeconds = totalBreakSeconds - 1
-        if (totalBreakSeconds <= 0) {
-            clearInterval(timer);
-            breakCount++;
-            document.getElementById("breakCount").textContent = `Break: ${breakCount}`;
-            startTimer()
-            return; // exit the interval to avoid negative time
-        }
+            totalBreakSeconds = totalBreakSeconds - 1
+            if (totalBreakSeconds <= 0) {
+                clearInterval(timer);
+                breakCount++;
+                document.getElementById("breakCount").textContent = `Break: ${breakCount}`;
+                startTimer()
+                return; // exit the interval to avoid negative time
+            }
 
-        let progress = totalBreakSeconds / originalBreakTime;
-        let angle = 360 * (1 - progress);
-        document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
+            let progress = totalBreakSeconds / originalBreakTime;
+            let angle = 360 * (1 - progress);
+            document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
 
-    }, 1000)}
+        }, 1000)
+    }
 
 }
 
@@ -170,6 +172,11 @@ function resetTimer() {
     document.getElementById("timerDisplay").textContent = `00:00`
     let angle = 360;
     document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
+    document.getElementById("BreakminutesInput").value = "";
+    document.getElementById("BreaksecondsInput").value = "";
+
+    document.getElementById("WorkminutesInput").value = "";
+    document.getElementById("WorksecondsInput").value = "";
 
 }
 
