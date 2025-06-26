@@ -7,12 +7,16 @@ let totalBreakSeconds;
 let originalBreakTime;
 let isBreak = false;
 
+let progress = 1
+let angle = 360 * (1 - progress);
+document.querySelector('.ring').style.background = `conic-gradient(#333 ${angle}deg, orange ${angle}deg)`;
+
 
 function startTimer() {
     clearInterval(timer);
+
     isBreak = false;
     // let minutes = document.getElementById("minutesInput").value; this is used to get the input from index.html but this is saved as string so to convert into integer we parse it. 
-    document.getElementById("pomodoroSound").play();
     let minutes = parseInt(document.getElementById("WorkminutesInput").value);
     let seconds = parseInt(document.getElementById("WorksecondsInput").value);
 
@@ -34,6 +38,8 @@ function startTimer() {
         alert("Please enter a valid Pomodoro duration.");
         return;
     }
+    document.getElementById("pomodoroSound").play();
+
 
     timer = setInterval(() => {
         if (totalSeconds <= 0) {
@@ -62,9 +68,9 @@ function startTimer() {
 }
 
 function startBreakTimer() {
+
     clearInterval(timer)
     isBreak = true;
-    document.getElementById("breakSound").play();
 
     let inputBreakMinutes = parseInt(document.getElementById("BreakminutesInput").value);
     let inputBreakSeconds = parseInt(document.getElementById("BreaksecondsInput").value);
@@ -86,6 +92,10 @@ function startBreakTimer() {
         return;
 
     }
+
+    document.getElementById("breakSound").play();
+
+
     timer = setInterval(() => {
 
         let mins = Math.floor(totalBreakSeconds / 60);
@@ -124,11 +134,11 @@ function resumeTimer() {
         behavior: "smooth"
     });
 
-    if (totalSeconds===0 & isBreak === false){
+    if (totalSeconds === 0 & isBreak === false) {
         alert("Please enter values");
         return;
     }
-     if (totalBreakSeconds===0 & isBreak === true){
+    if (totalBreakSeconds === 0 & isBreak === true) {
         alert("Break values invalid");
         return;
     }
@@ -187,7 +197,7 @@ function resumeTimer() {
 
 function resetTimer() {
     clearInterval(timer)
-    
+
     totalBreakSeconds = 0;
     totalSeconds = 0;
 
