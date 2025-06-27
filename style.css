@@ -23,7 +23,7 @@ body {
     color: aliceblue;
     display: flex;
     justify-content: center;
-    /* padding-left: 30px; */
+    padding-left: 30px;
 }
 .workTimer{
     display: flex;
