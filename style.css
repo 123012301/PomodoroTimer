@@ -99,12 +99,12 @@ input[type="number"] {
 }
 
 .ring.enlarged {
-    height: 40vw;
-    width: 40vw;
+    height: 380px;
+    width: 380px;
 }
 .center.enlarged{
-    height: 39.4vw;
-    width: 39.4vw;
+    height: 370px;
+    width: 370px;
 }
 
 .center {
