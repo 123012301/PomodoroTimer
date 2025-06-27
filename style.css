@@ -23,7 +23,7 @@ body {
     color: aliceblue;
     display: flex;
     justify-content: center;
-    padding-left: 30px;
+    /* padding-left: 30px; */
 }
 .workTimer{
     display: flex;
@@ -93,6 +93,18 @@ input[type="number"] {
     margin-bottom: 50px;
     overflow: hidden;
     background: conic-gradient(#333 0deg, orange 0deg);
+}
+.ring {
+  transition: transform 0.3s ease-in-out; /* smooth scaling */
+}
+
+.ring.enlarged {
+    height: 40vw;
+    width: 40vw;
+}
+.center.enlarged{
+    height: 39.4vw;
+    width: 39.4vw;
 }
 
 .center {

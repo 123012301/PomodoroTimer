@@ -20,10 +20,7 @@ function startTimer() {
     let minutes = parseInt(document.getElementById("WorkminutesInput").value);
     let seconds = parseInt(document.getElementById("WorksecondsInput").value);
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+   
 
     if (minutes < 0 || seconds < 0) {
         alert("Please enter non-negative values.");
@@ -39,7 +36,14 @@ function startTimer() {
         return;
     }
     document.getElementById("pomodoroSound").play();
-
+    //After clicking on start it will automatically make the circle bigger
+    document.querySelector(".ring").classList.add("enlarged")
+    document.querySelector(".center").classList.add("enlarged")
+    //Will scroll to top once you click start
+     window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
     timer = setInterval(() => {
         if (totalSeconds <= 0) {
@@ -210,7 +214,8 @@ function resetTimer() {
     document.getElementById("WorkminutesInput").value = "";
     document.getElementById("WorksecondsInput").value = "";
 
-
+    document.querySelector(".ring").classList.remove("enlarged")
+    document.querySelector(".center").classList.remove("enlarged")
 
 }
 function presetTimer(workMin, workSec, breakMin, breakSec) {
