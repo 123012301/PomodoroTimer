@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +15,8 @@ h1 {
     justify-content: center;
     color: aliceblue;
     padding: 15px;
+    font-family: 'Cedarville Cursive';
+
 }
 
 body {
@@ -25,14 +29,16 @@ body {
     justify-content: center;
     padding-left: 30px;
 }
-.workTimer{
+
+.workTimer {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     padding-bottom: 10px;
 }
-.breakTimer{
+
+.breakTimer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +47,7 @@ body {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
 input[type="number"] {
     background-color: #1e1e1e;
     border: 2px solid #ff7b00;
@@ -62,6 +69,7 @@ input[type="number"]::placeholder {
 input[type="number"]:focus {
     border-color: #ffaa33;
 }
+
 /* Remove arrows from number inputs */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -70,7 +78,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-    -moz-appearance: textfield; /* For Firefox */
+    -moz-appearance: textfield;
+    /* For Firefox */
 }
 
 
@@ -94,15 +103,18 @@ input[type="number"] {
     overflow: hidden;
     background: conic-gradient(#333 0deg, orange 0deg);
 }
+
 .ring {
-  transition: transform 0.3s ease-in-out; /* smooth scaling */
+    transition: transform 0.3s ease-in-out;
+    /* smooth scaling */
 }
 
 .ring.enlarged {
     height: 380px;
     width: 380px;
 }
-.center.enlarged{
+
+.center.enlarged {
     height: 370px;
     width: 370px;
 }
@@ -120,19 +132,22 @@ input[type="number"] {
     justify-content: center;
     z-index: 2;
 }
-#sessionCount{
+
+#sessionCount {
     display: flex;
     justify-content: center;
     color: white;
     margin-bottom: 40px;
 }
-#breakCount{
+
+#breakCount {
     display: flex;
     justify-content: center;
     color: white;
     margin-bottom: 40px;
 }
-.sessAbreak{
+
+.sessAbreak {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -143,7 +158,7 @@ input[type="number"] {
     gap: 30px;
     justify-content: center;
     margin-top: 30px;
-    
+
 }
 
 .actionButtons {
@@ -153,8 +168,10 @@ input[type="number"] {
     justify-content: center;
     gap: 12px;
     padding: 14px 35px;
-    background: linear-gradient(145deg, #1a0e06, #2c1507); /* warm darks */
-    border: 2px solid rgba(255, 165, 0, 0.2); /* soft orange border */
+    background: linear-gradient(145deg, #1a0e06, #2c1507);
+    /* warm darks */
+    border: 2px solid rgba(255, 165, 0, 0.2);
+    /* soft orange border */
     border-radius: 100px;
     color: #fff;
     font-size: 16px;
@@ -163,7 +180,8 @@ input[type="number"] {
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.15); /* orange glow */
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.15);
+    /* orange glow */
     backdrop-filter: blur(8px);
     z-index: 1;
 }
@@ -175,7 +193,8 @@ input[type="number"] {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(from 0deg, #ff7b00, #ffae42, #ff7b00); /* warm orange gradient */
+    background: conic-gradient(from 0deg, #ff7b00, #ffae42, #ff7b00);
+    /* warm orange gradient */
     animation: rotate 4s linear infinite;
     z-index: -2;
 }
@@ -184,29 +203,32 @@ input[type="number"] {
     content: "";
     position: absolute;
     inset: 2px;
-    background: #121212; /* match main theme */
+    background: #121212;
+    /* match main theme */
     border-radius: inherit;
     z-index: -1;
 }
 
 .actionButtons:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(255, 140, 0, 0.3); /* stronger glow on hover */
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.3);
+    /* stronger glow on hover */
 }
 
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
 
-.presets{
+.presets {
     display: flex;
     gap: 80px;
-    justify-content:center;
+    justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -216,30 +238,30 @@ input[type="number"] {
 
 /* CSS */
 .presetButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6px 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-  border-radius: 6px;
-  border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
 
-  background: #6E6D70;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
-  color: #DFDEDF;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #DFDEDF;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .presetButtons:focus {
-  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-  outline: 0;
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
 }
 
 
 @media only screen and (max-width: 550px) {
-    .buttons{
+    .buttons {
         gap: 5px;
     }
 }
